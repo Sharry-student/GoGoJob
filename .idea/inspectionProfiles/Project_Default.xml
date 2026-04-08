@@ -1,0 +1,47 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="plotly" />
+          <option value="pandas" />
+          <option value="scikit-learn" />
+          <option value="torch" />
+          <option value="requests" />
+          <option value="scipy" />
+          <option value="matplotlib" />
+          <option value="seaborn" />
+          <option value="beautifulsoup4" />
+          <option value="lxml" />
+          <option value="Scrapy" />
+          <option value="fake-useragent" />
+          <option value="pyppeteer" />
+          <option value="aiohttp" />
+          <option value="jieba" />
+          <option value="nltk" />
+          <option value="pyecharts" />
+          <option value="joblib" />
+          <option value="xgboost" />
+          <option value="lightgbm" />
+          <option value="python-dotenv" />
+          <option value="tqdm" />
+          <option value="openpyxl" />
+          <option value="xlrd" />
+          <option value="pytest" />
+          <option value="coverage" />
+          <option value="Flask" />
+          <option value="Flask-WTF" />
+          <option value="Werkzeug" />
+          <option value="Jinja2" />
+          <option value="itsdangerous" />
+          <option value="PyMySQL" />
+          <option value="SQLAlchemy" />
+          <option value="Flask-SQLAlchemy" />
+          <option value="numpy" />
+          <option value="colorama" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

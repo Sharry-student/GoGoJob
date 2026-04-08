@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}首页概览{% endblock %}
+{% block content %}
+<h2 class="page-title">首页概览</h2>
+<div class="row g-3 mb-3">
+    <div class="col-md-4"><div class="metric-card"><div>岗位总数</div><div id="totalJobs" class="metric-value">0</div></div></div>
+    <div class="col-md-4"><div class="metric-card"><div>平均薪资</div><div id="avgSalary" class="metric-value">0 元/月</div></div></div>
+    <div class="col-md-4"><div class="metric-card"><div>岗位类别数</div><div id="cateCount" class="metric-value">14</div></div></div>
+</div>
+<div class="row g-3">
+    <div class="col-lg-6"><div class="panel"><h5>学历要求分布</h5><div id="eduChart" class="chart-box"></div></div></div>
+    <div class="col-lg-6"><div class="panel"><h5>经验要求分布</h5><div id="expChart" class="chart-box"></div></div></div>
+    <div class="col-lg-12"><div class="panel"><h5>公司规模分布</h5><div id="sizeChart" class="chart-box"></div></div></div>
+    <div class="col-lg-6"><div class="panel"><h5>热门城市岗位数 TOP10</h5><div id="cityCountChart" class="chart-box"></div></div></div>
+    <div class="col-lg-6"><div class="panel"><h5>城市平均薪资 TOP10</h5><div id="citySalaryChart" class="chart-box"></div></div></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

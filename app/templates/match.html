@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}岗位匹配{% endblock %}
+{% block content %}
+<h2 class="page-title">岗位匹配</h2>
+<div class="panel mb-3 floating-panel">
+    <div class="row g-2">
+        <div class="col-md-3"><select id="mTitle" class="form-select"><option value="">请选择期望职位</option></select></div>
+        <div class="col-md-3"><select id="mProvince" class="form-select"><option value="">期望省份</option></select></div>
+        <div class="col-md-3"><select id="mCity" class="form-select"><option value="">期望城市</option></select></div>
+        <div class="col-md-3"><select id="mMin" class="form-select"><option value="">最低薪资</option></select></div>
+        <div class="col-md-3"><select id="mMax" class="form-select"><option value="">最高薪资</option></select></div>
+        <div class="col-md-3"><select id="mEdu" class="form-select"><option value="">学历要求</option></select></div>
+        <div class="col-md-3"><select id="mExp" class="form-select"><option value="">经验要求</option></select></div>
+        <div class="col-md-3"><select id="mSize" class="form-select"><option value="">公司规模</option></select></div>
+    </div>
+    <div class="mt-2"><button class="btn btn-primary" id="btnMatch">开始匹配</button></div>
+</div>
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="panel">
+            <h5>匹配结果</h5>
+            <div class="small text-muted mb-2">返回候选数：<span id="matchSampleCount">0</span></div>
+            <div id="matchList"></div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel">
+            <h5>匹配分析</h5>
+            <div class="mb-2">岗位匹配度 <span id="anaTitle">0%</span><div class="progress"><div id="barTitle" class="progress-bar bg-primary" style="width:0%"></div></div></div>
+            <div class="mb-2">地区匹配度 <span id="anaLoc">0%</span><div class="progress"><div id="barLoc" class="progress-bar bg-success" style="width:0%"></div></div></div>
+            <div class="mb-2">薪资匹配度 <span id="anaSalary">0%</span><div class="progress"><div id="barSalary" class="progress-bar bg-warning" style="width:0%"></div></div></div>
+            <hr>
+            <div>综合得分：<span id="anaTotal" class="fw-bold">0</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/match.js') }}"></script>
+{% endblock %}

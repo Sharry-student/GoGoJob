@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}新增用户{% endblock %}
+{% block content %}
+<h2 class="page-title">新增用户</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="alert alert-{{ 'danger' if messages[0][0] == 'error' else 'success' }}">{{ messages[0][1] }}</div>
+    {% endif %}
+{% endwith %}
+<div class="panel">
+    <form method="post" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">用户名</label>
+            <input class="form-control" name="username" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">角色</label>
+            <select class="form-select" name="role">
+                <option value="user">普通用户</option>
+                <option value="admin">管理员</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">密码</label>
+            <input class="form-control" type="password" name="password" required>
+            <div class="small text-muted mt-1">密码需至少8位，包含大小写字母、数字、特殊字符</div>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary">创建用户</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
