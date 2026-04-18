@@ -12,7 +12,9 @@
 <div class="layout">
     <aside class="sidebar">
         <div class="logo">招聘数据可视化分析平台</div>
-        <a href="{{ url_for('main.dashboard') }}" class="nav-item">首页</a>
+        <a href="{{ url_for('main.dashboard') }}" class="nav-item">
+        <span class="nav-single-text">首页</span>
+        </a>
         <div class="nav-section-label">POPULAR JOBS</div>
         {% if menu|length > 0 %}
             <div class="nav-dropdown" data-group="g1">
@@ -46,8 +48,22 @@
                 <span>分析</span><span class="toggle-icon">▸</span>
             </button>
             <div class="sub-menu">
+                <a href="{{ url_for('main.compare_page') }}" class="nav-item sub-item">岗位对比</a>
                 <a href="{{ url_for('main.predict_page') }}" class="nav-item sub-item">薪资预测</a>
                 <a href="{{ url_for('main.match_page') }}" class="nav-item sub-item">岗位匹配</a>
+            </div>
+        </div>
+        <div style="padding: 15px; width: 100%;">
+            <div style="background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 8px; padding: 12px;">
+                <h6 style="color: #3498db; font-size: 0.85rem; margin-bottom: 8px; font-weight: bold;">📖 快速上手指南</h6>
+                <div style="color: rgba(255,255,255,0.6); font-size: 0.75rem; line-height: 1.6;">
+                    <div style="margin-bottom: 8px;">
+                        <b style="color: #fff;">🛠️ 功能：</b>仪表盘看全局内容，热力图看分布地区
+                    </div>
+                    <div>
+                        <b style="color: #fff;">🖱️ 交互：</b>悬停查看数值，点击图例可过滤数据。
+                    </div>
+                </div>
             </div>
         </div>
     </aside>
@@ -79,3 +95,4 @@
 {% block scripts %}{% endblock %}
 </body>
 </html>
+

@@ -2,6 +2,16 @@
 {% block title %}薪资热力图{% endblock %}
 {% block content %}
 <h2 class="page-title">薪资热力图</h2>
+<div style="background: rgba(52, 152, 219, 0.05); border-left: 4px solid #3498db; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px;">
+        通过色彩深浅直观呈现全国薪资水平差异
+    </p>
+    <div style="background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #eee;">
+        <p style="color: #e67e22; font-size: 0.85rem; font-weight: bold; margin: 0;">
+            💡 交互小技巧：直接点击地图上的省份，右侧将同步显示该地区薪资最高的 10 个城市名次及相关岗位
+        </p>
+    </div>
+</div>
 <div class="panel mb-3">
     <div class="row g-2">
         <div class="col-md-3"><select id="mapCategory" class="form-select"><option value="全部">全部类别</option></select></div>

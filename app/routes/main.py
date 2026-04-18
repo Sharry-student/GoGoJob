@@ -257,3 +257,7 @@ def job_similar_export(job_id):
         mimetype="text/csv; charset=utf-8-sig",
         headers={"Content-Disposition": f"attachment; filename=job_{job_id}_similar.csv"},
     )
+@main_bp.route("/compare")
+@login_required
+def compare_page():
+    return render_template("compare.html", menu=category_menu())

@@ -61,13 +61,45 @@ async function loadMap() {
         return;
     }
     const chart = echarts.init(document.getElementById("mapBarChart"));
-    chart.setOption({
-        graphic: [],
-        tooltip: { trigger: "axis" },
-        xAxis: { type: "value" },
-        yAxis: { type: "category", data: data.map_data.map(x => x.name) },
-        series: [{ type: "bar", data: data.map_data.map(x => x.value) }]
-    });
+chart.setOption({
+    graphic: [],
+    tooltip: { trigger: "axis" },
+
+    grid: {
+        left: '5%',
+        right: '10%',
+        bottom: '3%',
+        top: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: "value",
+        axisLabel: { fontSize: 11 }
+    },
+    yAxis: {
+        type: "category",
+        data: data.map_data.map(x => x.name),
+        axisLabel: {
+
+            interval: 0,
+            fontSize: 11
+        }
+    },
+    series: [{
+        type: "bar",
+        data: data.map_data.map(x => x.value),
+
+        barWidth: '60%',
+        itemStyle: {
+
+            color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                { offset: 0, color: '#4f7cff' },
+                { offset: 1, color: '#91d5ff' }
+            ]),
+            borderRadius: [0, 4, 4, 0]
+        }
+    }]
+});
 
     const mapChart = echarts.init(document.getElementById("chinaMapChart"));
     try {

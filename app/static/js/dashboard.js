@@ -1,8 +1,27 @@
 function pieOption(title, data) {
     return {
-        tooltip: { trigger: "item" },
-        legend: { top: "bottom" },
-        series: [{ name: title, type: "pie", radius: ["35%", "70%"], data }]
+
+        grid: {
+            top: '10%',
+            bottom: '10%',
+            containLabel: true
+        },
+        series: [{
+            name: title,
+            type: "pie",
+
+            radius: ["35%", "55%"],
+
+            center: ["50%", "45%"],
+            data: data,
+            label: {
+                fontSize: 11
+            }
+        }],
+        legend: {
+            bottom: '0',
+            textStyle: { fontSize: 10 }
+        }
     };
 }
 
@@ -30,7 +49,20 @@ async function loadDashboard(category = "全部") {
     const size = echarts.init(document.getElementById("sizeChart"));
     const cityCount = echarts.init(document.getElementById("cityCountChart"));
     const citySalary = echarts.init(document.getElementById("citySalaryChart"));
-    const eduOption = pieOption("学历", data.education);
+    const showLabels = ["本科", "大专", "学历不限", "硕士"];
+const filteredEduData = data.education.map(item => {
+
+    if (showLabels.indexOf(item.name) === -1) {
+        return {
+            ...item,
+            label: { show: false },
+            labelLine: { show: false }
+        };
+    }
+    return item;
+});
+
+const eduOption = pieOption("学历", filteredEduData);
     eduOption.series[0].itemStyle = { borderRadius: 6, borderColor: "#fff", borderWidth: 2 };
     eduOption.series[0].color = ["#4f7cff", "#69b1ff", "#91d5ff", "#adc6ff", "#d6e4ff", "#2f54eb", "#5c7cff", "#85a5ff"];
     const expOption = pieOption("经验", data.experience);
@@ -46,9 +78,31 @@ async function loadDashboard(category = "全部") {
     });
     cityCount.setOption({
         tooltip: { trigger: "axis" },
+
+        grid: {
+            left: '3%',
+            right: '8%',
+            bottom: '5%',
+            top: '10%',
+            containLabel: true
+        },
         xAxis: { type: "value" },
-        yAxis: { type: "category", data: data.top_cities.map(x => x.name) },
-        series: [{ type: "bar", data: data.top_cities.map(x => x.value), itemStyle: { color: gradientBar("#2f54eb", "#597ef7"), borderRadius: [0, 6, 6, 0] } }]
+        yAxis: {
+            type: "category",
+            data: data.top_cities.map(x => x.name),
+            axisLabel: {
+                fontSize: 11,
+                interval: 0
+            }
+        },
+        series: [{
+            type: "bar",
+            data: data.top_cities.map(x => x.value),
+            itemStyle: {
+                color: gradientBar("#2f54eb", "#597ef7"),
+                borderRadius: [0, 6, 6, 0]
+            }
+        }]
     });
     const salaryVals = data.top_city_salary.map(x => x.value);
     const minVal = salaryVals.length ? Math.min(...salaryVals) : 0;
@@ -57,9 +111,31 @@ async function loadDashboard(category = "全部") {
     const axisMax = maxVal > 0 ? Math.ceil(maxVal * 1.05) : 100;
     citySalary.setOption({
         tooltip: { trigger: "axis" },
+
+        grid: {
+            left: '3%',
+            right: '8%',
+            bottom: '5%',
+            top: '10%',
+            containLabel: true
+        },
         xAxis: { type: "value", min: axisMin, max: axisMax },
-        yAxis: { type: "category", data: data.top_city_salary.map(x => x.name) },
-        series: [{ type: "bar", data: data.top_city_salary.map(x => x.value), itemStyle: { color: gradientBar("#f5222d", "#fa8c16"), borderRadius: [0, 6, 6, 0] } }]
+        yAxis: {
+            type: "category",
+            data: data.top_city_salary.map(x => x.name),
+            axisLabel: {
+                fontSize: 11,
+                interval: 0
+            }
+        },
+        series: [{
+            type: "bar",
+            data: data.top_city_salary.map(x => x.value),
+            itemStyle: {
+                color: gradientBar("#f5222d", "#fa8c16"),
+                borderRadius: [0, 6, 6, 0]
+            }
+        }]
     });
 }
 

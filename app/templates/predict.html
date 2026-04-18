@@ -2,6 +2,20 @@
 {% block title %}薪资预测{% endblock %}
 {% block content %}
 <h2 class="page-title">薪资预测</h2>
+<div style="background: rgba(52, 152, 219, 0.05); border-left: 4px solid #3498db; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+    <p style="color: #555; font-size: 1.3rem; line-height: 1.6; margin-bottom: 10px;">
+        本功能基于随机森林回归模型，通过对职位、地域、学历及经验等维度进行加权计算，预测目标岗位的薪资区间及市场平均水平。
+    </p>
+
+    <div style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #eee;">
+        <p style="color: #2c3e50; font-size: 1rem; font-weight: bold; margin-bottom: 5px;">🔍 如何使用：</p>
+        <ul style="color: #7f8c8d; font-size: 1rem; padding-left: 20px; margin: 0; line-height: 1.5;">
+            <li><strong>在预测表单中依次选择目标岗位、期望城市、个人学历及工作经验。</strong> </li>
+            <li><strong>点击“开始预测”后，下方将实时生成该条件下的薪资预估区间与置信度。</strong> </li>
+            <li><strong>页面底部提供模型评估信息（如MAE均值绝对误差），用于辅助判断预测结果的精度</strong> </li>
+        </ul>
+    </div>
+</div>
 <div class="panel floating-panel">
     <div class="row g-2">
         <div class="col-12"><h5 class="mb-2">薪资预测表单</h5></div>

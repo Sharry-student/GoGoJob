@@ -11,9 +11,9 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     RAW_CSV_PATH = os.getenv("RAW_CSV_PATH", str(BASE_DIR / "clean_data" / "all_jobs_cleaned.csv"))
     MYSQL_HOST = os.getenv("MYSQL_HOST", "127.0.0.1")
-    MYSQL_PORT = int(os.getenv("MYSQL_PORT", 3306))
+    MYSQL_PORT = int(os.getenv("MYSQL_PORT", 3307))
     MYSQL_USER = os.getenv("MYSQL_USER", "root")
-    MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "@Aa488429581")
+    MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "1155245550")
     MYSQL_DB = os.getenv("MYSQL_DB", "gogojob")
     SQLALCHEMY_DATABASE_URI = os.getenv(
         "DATABASE_URI",
