@@ -12,6 +12,16 @@ from sklearn.model_selection import train_test_split
 
 from app.models import Job
 
+# This analytics module contains the core statistical analysis,
+# salary prediction logic, and job matching algorithms.
+# The initial structure and algorithm ideas were assisted by Gemini
+# through a vibe-coding approach, especially for ML model selection
+# and similarity-based matching logic.
+#
+# We reviewed each part to understand how data flows from raw job records
+# to analytical insights, and adjusted the implementation to better fit
+# our dataset and project requirements.
+
 
 CATEGORY_GROUPS = [
     {

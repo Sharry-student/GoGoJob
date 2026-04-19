@@ -2,6 +2,19 @@ import os
 from pathlib import Path
 from urllib.parse import quote_plus
 
+# This file defines the global configuration of the GoGoJob application,
+# including secret keys, database connections, and local data paths.
+# During development, we used Gemini as a vibe-coding assistant to help us
+# understand how environment variables and configuration classes are usually
+# organized in a Flask project.
+#
+# One practical challenge we encountered was setting up MySQL locally.
+# Installing and configuring MySQL turned out to be a real challenge for
+# almost every team member (honestly, a lot harder than expected 😅).
+# Therefore, we intentionally kept some AI-generated Chinese comments
+# in this file to help us quickly understand what each field means,
+# how it should be modified, and how to make the application run correctly
+# on our own local machines.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 

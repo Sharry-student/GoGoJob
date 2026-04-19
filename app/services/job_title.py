@@ -1,5 +1,13 @@
 import re
 
+# This module is used to normalize messy job titles into a smaller set
+# of standardized categories. At the beginning, we used Gemini as a
+# vibe-coding assistant to help think about how real-world job titles
+# should be cleaned and grouped.
+
+# Gemini helped us draft the general idea, such as removing noise words,
+# using regular expressions, and mapping different titles to a unified role.
+
 
 STOPWORDS = [
     "五险一金",

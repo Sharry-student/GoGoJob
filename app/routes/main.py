@@ -24,8 +24,17 @@ except Exception:
     lazy_pinyin = None
 
 
+#This main module was initially scaffolded with the assistance of Gemini
+# using a vibe-coding approach. We asked Gemini to help design the routing
+# structure for a Flask-based data analytics platform, including page views
+# and REST-style APIs for dashboards, maps, salary prediction, and job matching.
+# The generated structure was then manually refined and connected to our own
+# analytics logic.
+
 main_bp = Blueprint("main", __name__)
 
+
+# Custom ordering rules to ensure consistent display of education and experience levels in filters and dropdowns.
 
 EDU_ORDER = ["不限", "中专", "高中", "大专", "本科", "硕士", "博士"]
 EXP_ORDER = ["经验不限", "在校生", "应届生", "1年以下", "1-3年", "3-5年", "5-10年", "10年以上"]
@@ -102,6 +111,11 @@ def job_detail_page(job_id):
     return render_template("job_detail.html", menu=category_menu(), job_id=job_id)
 
 
+# Provide options for filters and dropdown menus,
+# including province-city mapping, job titles, education,
+# experience, company size, and salary ranges.
+
+# Really hard to understand......
 @main_bp.route("/api/options")
 @login_required
 def options_api():

@@ -4,10 +4,14 @@ from flask_login import current_user, login_required, login_user, logout_user
 from app.extensions import db
 from app.models import User
 from app.services.security import role_required, validate_password_policy
-
+#We used Gemini to help generate a basic Flask-Login authentication flow, including login, logout, and admin-onlyuser management routes.
+#We tried to debug but we found that the code could work
 
 auth_bp = Blueprint("auth", __name__)
 
+
+# Prompt example:"Generate a Flask authentication module using Flask-Login.
+# It should support login, logout, role-based access control,and admin-only user management."
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():

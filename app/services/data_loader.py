@@ -4,6 +4,12 @@ from app.extensions import db
 from app.models import Job
 from app.services.job_title import normalize_job_title
 
+# This module is responsible for loading raw recruitment data from CSV files
+# into the database and performing basic data cleaning.
+# At the beginning, we used Gemini as a vibe-coding assistant to help us
+# design a reasonable data-loading workflow, especially for handling
+# messy real-world data such as salary fields, company size, and job titles.
+
 
 def safe_int(value):
     try:

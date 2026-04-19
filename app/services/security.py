@@ -5,6 +5,18 @@ from flask import abort
 from flask_login import current_user
 
 
+# This file contains helper functions related to security,
+# including password validation and role-based access control.
+# At the beginning of development, we used Gemini as a vibe-coding
+# assistant to understand common security checks used in Flask apps,
+# such as strong password rules and decorator-based permission control.
+
+
+
+# This function checks whether a password satisfies
+# a basic strong-password policy.
+# Each rule corresponds to a common real-world security requirement.
+# We are glad to find that we can read these code with knowledge in class=)
 def validate_password_policy(password: str):
     if len(password) < 8:
         return False, "密码长度至少8位"
