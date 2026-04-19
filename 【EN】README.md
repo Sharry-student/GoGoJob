@@ -213,10 +213,10 @@ SQL serves as a unified data service layer, supporting continuous incremental up
 - The salary heatmap's "National Heatmap" and "TOP10 Ranking" containers are highly unified, making the page visually more harmonious.
 
 ## 11. Future Development Direction
-- Added incremental cleaning tasks and scheduling orchestration;
-- Added model drift monitoring and data quality alerts;
-- Introduce a stronger semantic model to improve job matching accuracy;
-- Provides multi-tenancy and fine-grained permission control.
+- Enhance the logic for filtering conditions;
+- Optimize UI/UX design;
+- Personalization & Retention;
+- Implement Operation Confirmation Notification.
 
 ## 12. Document Reading Guide
 - Documents categorized by reader group can be found in: `docs/DOC_INDEX.md`
