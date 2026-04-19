@@ -45,7 +45,7 @@
 4. 后端 API 基于 SQL 查询提供图表统计与模型输入；
 5. 前端页面通过 API 进行交互与渲染。
 
-## 5. 项目结构（含模板细分）
+## 5. 项目结构
 ```text
 GoGoJob/
 ├─ app/
@@ -67,12 +67,13 @@ GoGoJob/
 │  │  ├─ match.html                 # 岗位匹配页
 │  │  ├─ job_detail.html            # 岗位详情页
 │  │  ├─ compare.html               # 岗位对比页
+│  │  ├─ register.html              # 新增用户页
 │  │  ├─ users.html                 # 用户管理页
 │  │  └─ setup.html                 # 初始化引导页
 │  ├─ static/
 │  │  ├─ css/main.css               # 全局样式
 │  │  ├─ js/*.js                    # 页面交互脚本
-│  │  └─ img/lanyangyang.png        # 登录背景图
+│  │  └─ img/bgp.png        # 登录背景图
 │  ├─ models.py                     # ORM 模型
 │  ├─ config.py                     # 配置与数据库连接
 │  └─ __init__.py                   # 应用工厂与初始化
@@ -131,11 +132,12 @@ GoGoJob/
    ```sql
    CREATE DATABASE gogojob CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
    ```
-   - Open the app/config.py file in your project, find the "MySQL Configuration" section, and modify the following parameters to your local MySQL information:
+   - 打开你项目中的 app/config.py 文件，找到"MySQL 配置"部分，并将以下参数修改为你的本地 MySQL 信息：
      - MYSQL_PORT：你的 MySQL 端口号（默认 3306）
      - MYSQL_PASSWORD：你的 MySQL root 用户密码
      - 其他参数如无特殊修改，保持默认即可
-   
+
+
 3. 启动服务：
    ```bash
    python run.py

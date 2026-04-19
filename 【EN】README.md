@@ -8,7 +8,7 @@ The system is designed to achieve the following objectives:
 
 - Standardize multi-source recruitment data to ensure consistent statistical definitions;
 - Build maintainable data assets in MySQL and avoid direct file access from the front end;
-- Provide salary prediction and job matching capabilities for job seekers;
+- Provide salary prediction and job matching capabilities for jobseekers;
 - Deliver insights across dimensions such as region, education, experience, and company size through visual dashboards.
 
 ---
@@ -94,7 +94,7 @@ The system is designed to achieve the following objectives:
 
 ---
 
-## 5. Project Structure (Including Template Breakdown)
+## 5. Project Structure
 ```text
 GoGoJob/
 ├─ app/
@@ -116,12 +116,13 @@ GoGoJob/
 │  │  ├─ match.html                 # Job matching page
 │  │  ├─ job_detail.html            # Job Details Page
 │  │  ├─ compare.html               # Job Comparison Page
+│  │  ├─ register.html              # New User Page
 │  │  ├─ users.html                 # User Management Page
 │  │  └─ setup.html                 # Initialize boot page
 │  ├─ static/
 │  │  ├─ css/main.css               # Global Styles
 │  │  ├─ js/*.js                    # Page interaction scripts
-│  │  └─ img/lanyangyang.png        # Login background image
+│  │  └─ img/bgp.png        # Login background image
 │  ├─ models.py                     # ORM Model
 │  ├─ config.py                     # Configure database connection
 │  └─ __init__.py                   # Application factory and initialization
@@ -156,7 +157,7 @@ GoGoJob/
 
 ### 7.2 Job Matching
 - **Hard constraint**: Matching candidates are only drawn from the job categories selected by the user;
-- **Multi-dimensional scoring**: City/province matching, salary range matching, education and experience matching, and scale matching;
+- **Multidimensional scoring**: City/province matching, salary range matching, education and experience matching, and scale matching;
 - **Similarity Enhancement**: Calculate cosine similarity for structured feature vectors to enhance score differentiation;
 - **Output Results**: Top 10 results and sub-item scores.
 
@@ -185,6 +186,7 @@ SQL serves as a unified data service layer, supporting continuous incremental up
      - MYSQL_PASSWORD: Your MySQL root user password
      - Other parameters can be left at their default values unless otherwise specified.
 
+
 3. Start the service:
    ```bash
    python run.py
@@ -198,7 +200,7 @@ SQL serves as a unified data service layer, supporting continuous incremental up
 - MYSQL_PORT: Your MySQL port number (default 3306)
 - MYSQL_PASSWORD: Your MySQL root user password
 
-- Other parameters can be left at their default values ​​unless otherwise specified.
+- Other parameters can be left at their default values unless otherwise specified.
 - Use SQL as the sole data source for services to avoid data drift caused by front-end "direct file reading";
 - Cleaning rules and business constraints are set in advance, and prediction and matching results are traceable;
 - The management interface supports initialization and user governance, making it suitable for collaborative development environments.
